@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: config-consumer
+
+eureka:
+  instance:
+    nonSecurePort: ${server.port:8083}
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
+
+
+server:
+  port: 8083
+
+
+reply:
+  message: Consumer 2
