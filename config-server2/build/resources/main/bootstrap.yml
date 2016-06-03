@@ -1,0 +1,20 @@
+spring:
+ application:
+    name: my-spring-config-xyi
+ profiles:
+    active: native
+ cloud:
+    config:
+      server:
+       native:
+         searchLocations: classpath:/config
+
+server:
+   port: 8890
+
+eureka:
+  instance:
+    nonSecurePort: ${server.port:8890}
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/

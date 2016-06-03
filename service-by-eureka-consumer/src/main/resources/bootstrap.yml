@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: config-consumer
+  cloud:
+    config:
+      enabled: true
+      discovery:
+        enabled: true
+        serviceId: my-spring-config-xyi
+
+
+
+eureka:
+  instance:
+    nonSecurePort: ${server.port:8082}
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.host:localhost}:${eureka.port:8761}/eureka/
+
+
+server:
+  port: 8082
+
+
+reply:
+  message: Pong local
